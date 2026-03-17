@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير إحصائي - امتحانات مزاولة المهنة (مختبرات طبية)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #22a699;
+            --accent-color: #f29727;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2b2b2b;
+            --text-muted: #6c757d;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 4px solid var(--secondary-color);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+
+        .chart-container {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .bar-group {
+            margin-bottom: 20px;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .bar-bg {
+            background-color: #e9ecef;
+            border-radius: 20px;
+            height: 12px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            background-color: var(--secondary-color);
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .bar-fill.chem { background-color: #3498db; }
+        .bar-fill.hema { background-color: #e74c3c; }
+        .bar-fill.micro { background-color: #2ecc71; }
+        .bar-fill.immuno { background-color: #9b59b6; }
+        .bar-fill.manage { background-color: #f1c40f; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .insights-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .insights-list li {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 4px solid var(--accent-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .insights-list h4 {
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>التحليل الإحصائي الشامل لأسئلة مزاولة المهنة</h1>
+        <p>تخصص مختبرات طبية - تحليل النماذج المتراكمة (2021 - 2025)</p>
+    </header>
+
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <h3>إجمالي ظُهور الأسئلة المحللة</h3>
+            <div class="number">+1,100</div>
+            <p>سؤال في جميع النماذج</p>
+        </div>
+        <div class="stat-card">
+            <h3>الأسئلة الفريدة (غير المكررة)</h3>
+            <div class="number">~480</div>
+            <p>فكرة وسؤال مستقل</p>
+        </div>
+        <div class="stat-card">
+            <h3>نسبة التكرار والنسخ الحرفي</h3>
+            <div class="number">42%</div>
+            <p>من إجمالي محتوى الامتحانات</p>
+        </div>
+        <div class="stat-card">
+            <h3>النمط المعرفي السائد</h3>
+            <div class="number">95%</div>
+            <p>استدعاء مباشر للمعلومات (Recall)</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">التوزيع النسبي للمواضيع العلمية</h2>
+    <div class="chart-container">
+        <div class="bar-group">
+            <div class="bar-label"><span>الأحياء الدقيقة والطفيليات (Microbiology & Parasitology)</span><span>30%</span></div>
+            <div class="bar-bg"><div class="bar-fill micro" style="width: 30%"></div></div>
+        </div>
+        <div class="bar-group">
+            <div class="bar-label"><span>الكيمياء السريرية (Clinical Chemistry)</span><span>26%</span></div>
+            <div class="bar-bg"><div class="bar-fill chem" style="width: 26%"></div></div>
+        </div>
+        <div class="bar-group">
+            <div class="bar-label"><span>أمراض الدم والتخثر (Hematology & Coagulation)</span><span>24%</span></div>
+            <div class="bar-bg"><div class="bar-fill hema" style="width: 24%"></div></div>
+        </div>
+        <div class="bar-group">
+            <div class="bar-label"><span>المناعة والأمصال ونقل الدم (Immunology & Blood Bank)</span><span>15%</span></div>
+            <div class="bar-bg"><div class="bar-fill immuno" style="width: 15%"></div></div>
+        </div>
+        <div class="bar-group">
+            <div class="bar-label"><span>إدارة المختبرات وضبط الجودة (Lab Management & QC)</span><span>5%</span></div>
+            <div class="bar-bg"><div class="bar-fill manage" style="width: 5%"></div></div>
+        </div>
+    </div>
+
+    <h2 class="section-title">المفاهيم "الذهبية" (الأكثر تكراراً في جميع النماذج)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>التخصص</th>
+                <th>المفهوم العلمي الأكثر تكراراً</th>
+                <th>معدل الظهور</th>
+                <th>ملاحظات التحليل</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>أمراض الدم</td>
+                <td>فقر الدم المنجلي (SCA) والطفرة الجينية</td>
+                <td>عالي جداً</td>
+                <td>سؤال ثابت تقريباً حول استبدال الجلوتامات بـ الفالين.</td>
+            </tr>
+            <tr>
+                <td>أمراض الدم</td>
+                <td>أنواع اللوكيميا (ALL vs AML)</td>
+                <td>عالي</td>
+                <td>يتم التركيز دائماً على الفئة العمرية (ALL للأطفال، AML للبالغين).</td>
+            </tr>
+            <tr>
+                <td>الكيمياء السريرية</td>
+                <td>دلالات الأورام (Tumor Markers)</td>
+                <td>عالي جداً</td>
+                <td>تكرار مستمر لـ CA15.3 (للثدي) و CA19.9 (للبنكرياس).</td>
+            </tr>
+            <tr>
+                <td>الكيمياء السريرية</td>
+                <td>وظائف الكلى والسكر</td>
+                <td>عالي</td>
+                <td>التركيز على HbA1c للمتابعة طويلة الأمد، و Creatinine clearance كأدق فحص للكلى.</td>
+            </tr>
+            <tr>
+                <td>الأحياء الدقيقة</td>
+                <td>التعقيم والمطهرات</td>
+                <td>متوسط إلى عالي</td>
+                <td>الإيثانول 85% للفيروسات، و Hot air oven للزجاجيات والأدوات المعدنية.</td>
+            </tr>
+            <tr>
+                <td>الطفيليات</td>
+                <td>العوائل الخازنة (Reservoir Hosts)</td>
+                <td>متوسط</td>
+                <td>الكلب لليشمانيا الحشوية، والقطط للتوكسوبلازما.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-title">تحليل النمط الامتحاني واستنتاجات استراتيجية</h2>
+    <ul class="insights-list">
+        <li>
+            <h4>1. بنك أسئلة مركزي ومحدود</h4>
+            <p>يُظهر التحليل أن الجامعات والمجالس الطبية (صنعاء، عدن، تعز، إب) تعتمد على "بنك أسئلة" شبه موحد. حيث وجد أن نماذج عام 2023 و 2024 و 2025 تحتوي على كتل نصية كاملة منسوخة من نموذج "عدن سبتمبر 2021" ونموذج "صنعاء ديسمبر 2021". دراسة هذه النماذج القديمة يعتبر مفتاحاً لاجتياز الامتحانات الحديثة.</p>
+        </li>
+        <li>
+            <h4>2. غياب الجانب التحليلي السريري (Clinical Scenarios)</h4>
+            <p>لا تقيس الامتحانات مهارات ربط النتائج ببعضها أو تشخيص حالات مرضية معقدة. 95% من الأسئلة تبدأ بـ "ما هو..."، "يستخدم هذا الفحص لـ..."، مما يعني أن المراجعة المعتمدة على الحفظ المباشر للمفاهيم السطحية والربط المباشر (Keyword association) هي الاستراتيجية الأنجح.</p>
+        </li>
+        <li>
+            <h4>3. التباين في الأسئلة الخلافية</h4>
+            <p>هناك أسئلة تتكرر بخيارات قد تحتمل أكثر من إجابة علمية دقيقة بناءً على المرجع (مثل وقت ظهور نتيجة "No Growth" في مزرعة الدم، أو المسبب الأبرز للبروتين في البول). في هذه الحالات، يبدو أن واضعي الأسئلة يعتمدون على مذكرات أكاديمية كلاسيكية محددة أكثر من التحديثات الطبية العالمية الدقيقة.</p>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>
